@@ -1,3 +1,5 @@
+from copy import deepcopy as dp
+
 m = []
 
 def convert(x):
@@ -60,10 +62,15 @@ def mag(x):
     else:
         return 3*mag(x[0]) + 2*mag(x[1])
 
-a = m[0] 
+ms = -float("inf")
 
-for k in m[1:]:
-    a = [a, k]
-    reduce(a)
+for i in range(len(m)):
+    for j in range(len(m)):
+        if i == j:
+            continue
+        k = dp([m[i] , m[j]])
+        reduce(k)
+        ms = max(ms, mag(k))
 
-print(mag(a))
+
+print(ms)

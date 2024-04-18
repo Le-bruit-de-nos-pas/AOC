@@ -3,7 +3,7 @@
 import heapq
 
 # Read the cave map
-with open('2021_d15_input.txt', 'r') as file:
+with open('inputs/2021_d15_input.txt', 'r') as file:
     lines = file.readlines()
 
 # print(lines[1])
